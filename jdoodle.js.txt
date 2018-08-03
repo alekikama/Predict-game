@@ -39,7 +39,7 @@ bot.onText( /\/play (.+)/, function( msg, match ) {
 
                           [ { text: "Play", callback_game: JSON.stringify( { game_short_name: "TestGame" } ) } ],
 
-                          [ { text: "Share", url: "https://t.me/Arrowhunter_bot&game=Arrowhunter" } ]
+                          [ { text: "Share", url: "https://telegram.me/Arrowhunter_bot?game=Arrowhunter" } ]
 
                       ]
 
@@ -66,7 +66,7 @@ bot.on( "callback_query", function( cq ) {
 
           case "TestGame":
 
-              bot.answerCallbackQuery( cq.id, undefined, false, { url: "URL_DE_NUESTO_JUEGO" } );
+              bot.answerCallbackQuery( cq.id, undefined, false, { url: "https://tryfdyrgtzbgqnv9wsbdwq-on.drv.tw/Telegram%20game/telegram%202.html" } );
 
               return;
 
