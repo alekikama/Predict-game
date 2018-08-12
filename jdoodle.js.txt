@@ -1,12 +1,12 @@
 ﻿var TelegramBot = require( "node-telegram-bot-api" );
-var bot = new TelegramBot( "564385713:AAHD4gRDOqScml8qIBlpD0DzwD9WdstHmPw", { polling: true } );
+var bot = new TelegramBot( "693072764:AAGSPZgV9W-0eNwGUqx_rPTaLdJeN_ceAE0", { polling: true } );
 bot.onText( /\/start/, function( msg ) {
 
   bot.sendMessage(
 
       msg.from.id,
 
-      "Hi <b>" + msg.from.first_name + "</> " + msg.from.last_name + "\nLet's play Arrow Hunter game!",
+      "Hi <b>" + msg.from.first_name + "</> " + msg.from.last_name + "\nLets play Valga game!",
 
       {
 
@@ -37,9 +37,9 @@ bot.onText( /\/play (.+)/, function( msg, match ) {
 
                       inline_keyboard: [
 
-                          [ { text: "Play", callback_game: JSON.stringify( { game_short_name: "TestGame" } ) } ],
+                          [ { text: "Play", callback_game: JSON.stringify( { Valga: "TestGame" } ) } ],
 
-                          [ { text: "Share", url: "https://telegram.me/Arrowhunter_bot?game=Arrowhunter" } ]
+                          [ { text: "Share", url: "https://t.me/Valga_bot?game=Valga" } ]
 
                       ]
 
@@ -60,9 +60,9 @@ bot.onText( /\/play (.+)/, function( msg, match ) {
 } );
 bot.on( "callback_query", function( cq ) {
 
-  if ( cq.game_short_name ) {
+  if ( cq.Valga ) {
 
-      switch( cq.game_short_name ) {
+      switch( cq.Valga ) {
 
           case "TestGame":
 
@@ -72,14 +72,14 @@ bot.on( "callback_query", function( cq ) {
 
       }
 
-      bot.answerCallbackQuery( cq.id, "Sorry, '" + cq.game_short_name + "' is not available.", true );
+      bot.answerCallbackQuery( cq.id, "Sorry, '" + cq.Valga + "' is not available.", true );
 
   }
 
 } );
 bot.on( "inline_query", function( iq ) {
 
-  bot.answerInlineQuery( iq.id, [ { type: "game", id: "0", game_short_name: "TestGame" } ] );
+  bot.answerInlineQuery( iq.id, [ { type: "game", id: "0", Valga: "TestGame" } ] );
 
 } );
 
